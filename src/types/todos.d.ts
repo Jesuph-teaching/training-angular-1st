@@ -1,5 +1,6 @@
 declare interface TodoI {
+  userId: number;
   id: number;
   title: string;
-  isCompleted: boolean;
+  completed: boolean;
 }

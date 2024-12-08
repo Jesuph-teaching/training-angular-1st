@@ -1,3 +1,5 @@
-@for(item of todos(); track item.id ){
+@if(isLoading()){
+<div class="loading loading-spinner text-3xl"></div>
+}@else{ @for(item of todos(); track item.id ){
 <app-todo [todo]="item" (updateTodo)="updateTodo($event, item.id)"></app-todo>
-}
+} }

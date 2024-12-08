@@ -18,6 +18,14 @@ export const routes: Routes = [
     },
   },
   {
+    path: 'todos-table',
+    loadComponent: () => {
+      return import('./pages/todo-table/todo-table.component').then(
+        (imported) => imported.TodoTableComponent
+      );
+    },
+  },
+  {
     path: '**',
     loadComponent: () => {
       return import('./pages/not-found/not-found.component').then(

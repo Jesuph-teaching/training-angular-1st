@@ -2,7 +2,7 @@
   <input
     type="checkbox"
     [name]="'todo' + todo().id"
-    [checked]="todo().isCompleted"
+    [checked]="todo().completed"
     (input)="setCompleted($event)"
     class="peer/checkbox"
     [id]="'checkbox-' + todo().id"
@@ -10,6 +10,8 @@
   <label
     [for]="'checkbox-' + todo().id"
     class="peer-checked/checkbox:line-through leading-tight"
+    appHighlighted
+    [isHighlighted]="todo().completed"
   >
     {{ todo().title }}
   </label>

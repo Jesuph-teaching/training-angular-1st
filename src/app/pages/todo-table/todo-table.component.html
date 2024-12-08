@@ -1,0 +1,12 @@
+@if(isLoading()) {
+<div class="loading loading-spinner text-3xl"></div>
+
+}@else {
+
+<app-dynamic-table
+  [data]="todos()"
+  [columns]="columns"
+  [pagination]="pagination()"
+>
+</app-dynamic-table>
+}

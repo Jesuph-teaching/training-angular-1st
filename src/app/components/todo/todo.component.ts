@@ -1,8 +1,9 @@
 import { Component, input, output } from '@angular/core';
+import { HighlightedDirective } from '../../directives/highlighted.directive';
 
 @Component({
   selector: 'app-todo',
-  imports: [],
+  imports: [HighlightedDirective],
   templateUrl: './todo.component.html',
   styles: ``,
 })
@@ -11,11 +12,13 @@ export class TodoComponent {
   updateTodo = output<boolean>();
   // @Output() updateTodo !:boolean;
   setCompleted(event: Event) {
-    const isCompleted = event.target
+    const completed = event.target
       ? (event.target as HTMLInputElement).checked
       : false;
-    this.updateTodo.emit(isCompleted);
+    this.updateTodo.emit(completed);
   }
 }
 
-// https://jsonplaceholder.typicode.com/todos
+//
+
+//https://github.com/Jesuph-teaching/training-angular-1st
