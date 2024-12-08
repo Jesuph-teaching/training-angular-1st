@@ -1,0 +1,11 @@
+<div class="flex gap-2 items-center">
+  <button type="button" class="btn btn-sm" (click)="decrement()">-</button>
+  <input
+    type="number"
+    class="input input-bordered"
+    placeholder="counter"
+    [value]="counter"
+    readonly
+  />
+  <button type="button" class="btn btn-sm" (click)="increment()">+</button>
+</div>

@@ -1,0 +1,8 @@
+<app-greeting [name]="searchInput"></app-greeting>
+<app-counter></app-counter>
+<app-improved-counter></app-improved-counter>
+<input
+  type="text"
+  (input)="handleChange($event)"
+  placeholder="search for something"
+/>
