@@ -1,0 +1,40 @@
+<div class="flex gap-2">
+  <input [(ngModel)]="todo_title" />
+  <button (click)="addTodo()" type="submit" class="btn btn-secondary">
+    add todo
+  </button>
+</div>
+
+@if(store.isLoading()){
+<div class="loading loading-spinner text-3xl"></div>
+}@else{ @for(item of store.filteredTodos(); track item.id ){
+<app-todo
+  [todo]="item"
+  (updateTodo)="store.updateTodo(item.id, $event)"
+></app-todo>
+}
+<span>{{ store.completedCount() }}/{{ store.todos().length }}</span>
+<div class="flex gap-4">
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="store.updateFilter(null)"
+  >
+    Show All
+  </button>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="store.updateFilter('completed')"
+  >
+    Show completed
+  </button>
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="store.updateFilter('uncompleted')"
+  >
+    Show uncompleted
+  </button>
+</div>
+}

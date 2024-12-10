@@ -26,6 +26,14 @@ export const routes: Routes = [
     },
   },
   {
+    path: 'todos-store',
+    loadComponent: () => {
+      return import('./pages/todos-store/todos-store.component').then(
+        (imported) => imported.TodosStoreComponent
+      );
+    },
+  },
+  {
     path: '**',
     loadComponent: () => {
       return import('./pages/not-found/not-found.component').then(
